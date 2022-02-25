@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--1 配置User对象创建-->
+    <!--bean id="user" class="spring5.User"></bean>-->
+
+    <!--2 set方法注入属性-->
+    <!--bean id="book" class="spring5.Book">
+        <!-使用property完成属性注入
+            name: 类里面属性名称
+            value: 向属性注入的值
+            -->
+        <!--property name="bname" value="Java核心技术"></property>
+        <property name="bauthor" value="忘了"></property>
+        <property name="address"> 设置空值
+            <null>
+        <property>
+    </bean>-->
+
+    <!--3 有参数构造注入属性-->
+<!--    <bean id="orders" class="spring5.Orders">-->
+<!--        <constructor-arg name="oname" value="电脑"></constructor-arg>-->
+<!--        <constructor-arg name="address" value="China"></constructor-arg>-->
+<!--        &lt;!&ndash;constructor-arg index="1" value=""></constructor-arg&ndash;&gt;-->
+
+<!--    </bean>-->
+
+    <!--4 set方法使用p名称空间注入属性-->
+    <bean id="book" class="spring5.Book" p:bname="Java核心技术卷" p:bauthor="不知道">
+    </bean>
+
+<!--   <属性值包含特殊符号>&ndash;&gt;-->
+<!--        1.把<>进行转义  &lt; &gt;-->
+<!--        2.把带特殊符号的内容写到CDATE-->
+<!--    <property name="address">-->
+<!--        <value><![CDATA[<<南京>>]]</value>-->
+<!--    </property>-->
+
+</beans>
